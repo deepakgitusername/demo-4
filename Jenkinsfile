@@ -25,6 +25,9 @@ pipeline {
             }
         }
         stage('Terraform Action') { 
+            input {
+                message "Should we deploy the project?"
+            }
             steps {
                 sh 'echo "Terraform Action: $TERRAFORM_ACTION"'
                 sh '''
