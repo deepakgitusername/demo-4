@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh 'echo "Terraform Action: $TERRAFORM_ACTION"'
                 sh '''
-                    terraform $TERRAFORM_ACTION -auto-approve
+                    terraform $TERRAFORM_ACTION
                     
                 '''
             }
