@@ -8,10 +8,7 @@ pipeline {
 
 	}
     stages {
-        stage('Terraform Init: '$TERRAFORM_ACTION'') { 
-            input {
-                message "Should this '$TERRAFORM_ACTION' starts?"
-            }
+        stage('Terraform Init') { 
             steps {
                 sh 'echo "Initializing Terraform"'
                 sh '''
@@ -27,9 +24,9 @@ pipeline {
                 '''
             }
         }
-        stage('Terraform Action: $TERRAFORM_ACTION') { 
+        stage('Terraform Action') { 
             input {
-                message "Should this $TERRAFORM_ACTION starts?"
+                message "Should this ' terraform $TERRAFORM_ACTION' starts?"
             }
             steps {
                 sh 'echo "Terraform Action: $TERRAFORM_ACTION"'
