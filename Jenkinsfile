@@ -8,7 +8,7 @@ pipeline {
 
 	}
     stages {
-        stage('Terraform Init: "$TERRAFORM_ACTION"') { 
+        stage('Terraform Init: '$TERRAFORM_ACTION'') { 
             input {
                 message "Should this '$TERRAFORM_ACTION' starts?"
             }
