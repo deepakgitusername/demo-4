@@ -24,14 +24,14 @@ pipeline {
                 '''
             }
         }
-        stage('Terraform Action') { 
+        stage('Terraform Action: $TERRAFORM_ACTION') { 
             input {
-                message "Should we deploy the project?"
+                message "Should this $TERRAFORM_ACTION starts?"
             }
             steps {
                 sh 'echo "Terraform Action: $TERRAFORM_ACTION"'
                 sh '''
-                    terraform $TERRAFORM_ACTION
+                    terraform $TERRAFORM_ACTION -auto-approve
                     
                 '''
             }
