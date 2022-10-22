@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'echo "Initializing Terraform"'
                 sh '''
-                    terrafrom init
+                    terraform init
                 '''
             }
         }
